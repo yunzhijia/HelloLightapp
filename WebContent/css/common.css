@@ -1,0 +1,437 @@
+﻿html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    width: 100%;
+    font-family: Helvetica, tahoma, arial, sans-serif;
+    font-size: .28rem;
+    background-color: #e9ecf1;
+    color: #3f3f3f;
+}
+
+body,
+input, 
+textarea, 
+button, 
+p, 
+ul, 
+li, 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+button,
+input,
+textarea {
+    font-size: 100%;
+    background: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    outline: none;
+    color: #3f3f3f;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+i {
+    font-style: normal;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: '';
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+.pr {
+    position: relative;
+}
+
+.pa {
+    position: absolute;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.flexbox {
+    display: -webkit-box; 
+    display: -moz-box; 
+    display: -ms-flexbox; 
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flexbox-center {
+    -webkit-box-pack: center; 
+    -moz-box-pack: center; 
+    -ms-flex-pack: center; 
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flexbox-middle {
+    -webkit-box-align: center; 
+    -moz-box-align: center;
+    -ms-flex-align: center; 
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.ellipsis-2l {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;    /* 数值代表显示几行 */
+    -webkit-box-orient: vertical;
+}
+
+.ellipsis-3l {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;    /* 数值代表显示几行 */
+    -webkit-box-orient: vertical;
+}
+
+.line-bg {
+    width: 100%;
+    height: .16rem;
+    background-color: #e9ecf1;
+}
+
+.icon {
+    display: inline-block;
+    background: url(../images/icons.png?_t=201512151417) no-repeat;
+    background-size: 1.76rem;
+}
+
+.icon-fix {
+    background: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-fix:after {
+    content: '';
+    display: block;
+    width: 10000%;
+    height: 10000%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../images/icons.png?_t=201512151417);
+    background-repeat: no-repeat;
+    background-size: 176rem;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(.01);
+    transform-origin: 0 0;
+    transform: scale(.01);
+}
+
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    .icon{
+        background-image: url(../images/icons@2x.png?_t=201512151417);
+    }
+
+    .icon-fix {
+        background: none;
+    }
+
+    .icon-fix:after {
+        background-image: url(../images/icons@2x.png?_t=201512151417);
+    }
+} 
+
+.bd-color {
+    border-color: #dce1e8 !important;
+}
+
+.small-font {
+    font-size: .24rem;
+}
+
+.grey {
+    color: #9a9a9a;
+}
+
+.border {
+    border: 1px solid #dce1e8;
+}
+
+.border-t {
+    border-width: 1px 0 0 0;
+}
+
+.border-b {
+    border-width: 0 0 1px 0;
+}
+
+.border-none {
+    border: none !important;
+}
+
+/* 去掉元素原有的边框 */
+html[data-dpr="2"] .border,
+html[data-dpr="3"] .border{
+    position: relative;
+    border: none;
+}
+
+/* 通过设置伪元素放大到2倍的宽高，设置1px边框，再缩小1倍，以达到0.5px边框的效果*/
+html[data-dpr="2"] .border:before {
+    content: '';
+    display: block;
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #dce1e8;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+}
+
+html[data-dpr="2"] .border-b:before {
+    border-width: 0;
+    height: 1px;
+    background: #dce1e8;
+    top: initial;
+    bottom: 0;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+
+html[data-dpr="2"] .border-t:before {
+    border-width: 0;
+    height: 1px;
+    background: #dce1e8;
+    top: 0;
+}
+
+html[data-dpr="3"] .border:before {
+    content: '';
+    display: block;
+    width: 300%;
+    height: 300%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #dce1e8;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(.3333333333333333);
+    transform: scale(.33333333333333);
+}
+
+html[data-dpr="3"] .border-b:before {
+    border-width: 0;
+    height: 1px;
+    background: #dce1e8;
+    top: initial;
+    bottom: 0;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+
+html[data-dpr="3"] .border-t:before {
+    border-width: 0;
+    height: 1px;
+    background: #dce1e8;
+    top: 0;
+}
+
+/*------------------ 表格自适应布局start ---------------*/
+.grid {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.grid > [class^="col-"] {
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.grid > .col-main {
+    width: 100%;
+}
+
+.grid-middle > [class^="col-"] {
+    vertical-align: middle;
+}
+/*------------------ 表格自适应布局end ---------------*/
+
+/*------------------ 按钮组start -----------------*/
+.btn-group{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    text-align: center;
+    z-index: 2;
+    font-size: .32rem;
+}
+
+.btn-group button, .btn-group a, .btn-group .btn{
+    float: left;
+    position: relative;
+    width: 50%;
+    height: .88rem;
+    line-height: .88rem;
+    display: block;
+    cursor: pointer;
+    color: #3cbaff;
+}
+
+.btn-group button:active, .btn-group a:active, .btn-group .btn:active {
+    background-color: #f3f5f9;
+}
+
+.btn-group .btn-no{
+    color: #9a9a9a;
+}
+
+
+.btn-group .btn-full-w{
+    width: 100%;
+}
+/*------------------ 按钮组end -----------------*/
+
+
+/*------------------ loading动画start ----------------*/
+.loading{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    z-index: 2000;
+    display: none;
+}
+.loading .circle-container{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.loading .container2{
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+}
+.loading .circle-container div{
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #3cbaff;
+    position: absolute;
+    -webkit-animation: loading 1s linear infinite;
+            animation: loading 1s ease-in-out infinite;
+}
+
+.loading .circle1{top: 0; left: 0;}
+.loading .circle2{top: 0; right: 0; }
+.loading .circle3{bottom: 0; right: 0;}
+.loading .circle4{bottom: 0; left: 0; }
+
+
+.loading .container1 .circle1{
+    -webkit-animation-delay: -1s;
+            animation-delay: -.9s;
+}
+.loading .container2 .circle1{
+    -webkit-animation-delay: -.875s;
+            animation-delay: -.8s;
+}
+.loading .container1 .circle2{
+    -webkit-animation-delay: -.75s;
+            animation-delay: -.7s;
+}
+.loading .container2 .circle2{
+    -webkit-animation-delay: -.625s;
+            animation-delay: -.6s;
+}
+.loading .container1 .circle3{
+    -webkit-animation-delay: -.5s;
+            animation-delay: -.5s;
+}
+.loading .container2 .circle3{
+    -webkit-animation-delay: -.375s;
+            animation-delay: -.4s;
+}
+.loading .container1 .circle4{
+    -webkit-animation-delay: -.25s;
+            animation-delay: -.3s;
+}
+.loading .container2 .circle4{
+    -webkit-animation-delay: -.125s;
+            animation-delay: -.2s;
+}
+
+@-webkit-keyframes loading{
+    0%, 100%{
+        -webkit-transform: scale(1.0);
+    }
+    80%{
+        -webkit-transform: scale(0.0);
+    }
+}
+
+@keyframes loading{
+    0%, 100%{
+        -webkit-transform: scale(1.0);
+                transform: scale(1.0);
+    }
+    80%{
+        -webkit-transform: scale(0.0);
+                transform: scale(0.0);
+    }
+}
+/*------------------ loading动画end ----------------*/
